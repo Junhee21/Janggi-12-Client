@@ -1,116 +1,317 @@
-.container {
-  padding: 0 2rem;
-}
-
 .main {
-  min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
 }
-
-.footer {
-  display: flex;
-  flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
-  justify-content: center;
-  align-items: center;
-}
-
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
-}
-
-.title a {
-  color: #0070f3;
-  text-decoration: none;
-}
-
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
+ 
+.container {
+    position: relative;
+    height: 95vh;
+    width: 42.75vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
+    font-size: 8vh;
+    margin-top: 15vh;
 }
 
-.title,
-.description {
-  text-align: center;
+.info {
+    font-size: 3vh;
+    margin-top: 20vh;
 }
 
-.description {
-  margin: 4rem 0;
-  line-height: 1.5;
-  font-size: 1.5rem;
+.textarea {
+    height: 5vh;
+    width: 28vh;
+    background-color: black;
+    color: white;
+    resize: none;
+    font-size: 3vh;
+    margin-top: 3vh;
+    padding-top: 1vh;
 }
 
-.code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
+.textareaRoom {
+    height: 5vh;
+    width: 80%;
+    background-color: black;
+    color: white;
+    resize: none;
+    font-size: 2.5vh;
+    margin-top: 3vh;
+    padding-top: 1vh;
 }
 
-.grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
+.button {
+    text-align:center;
+    height: 6vh;
+    width: 14vh;
+    font-size: 3vh;
+    margin-top: 5vh;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding-top: 2vh;
+    cursor: pointer;
 }
 
-.card {
-  margin: 1rem;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
+.buttonRoom {
+    text-align:center;
+    height: 5vh;
+    width: 14vh;
+    font-size: 3vh;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding-top: 1vh;
+    cursor: pointer;
+    margin: 2vh;
 }
 
-.card:hover,
-.card:focus,
-.card:active {
-  color: #0070f3;
-  border-color: #0070f3;
-}
-
-.card h2 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
-}
-
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
-}
-
-.logo {
-  height: 1em;
-  margin-left: 0.5rem;
-}
-
-@media (max-width: 600px) {
-  .grid {
+.buttonBox {
+    display: flex;
     width: 100%;
+    justify-content: space-evenly;
+    margin-top: 1vh;
+}
+
+.roomList {
+    position: absolute;
+    height: 70vh;
+    width: 42vh;
+    top: 22vh;
+    display: flex;
     flex-direction: column;
-  }
+    align-items: center;
+    justify-content: flex-start;
+    overflow-y: auto;
+}
+
+.room {
+    min-height: 6.6vh;
+    margin-bottom: 5vh;
+    width: 70%;
+    word-break: break-all;
+    overflow: auto;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 2vh;
+    cursor: pointer;
+}
+
+.gameBox {
+    display: flex;
+    flex-direction: column;
+    min-height: 16.5vh;
+    max-height: 16.5vh;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    width: 95%;
+    border: 2px solid white;
+    border-radius: 3px;
+}
+
+.powBox {
+    flex: 2;
+    display: flex;
+    overflow-x: auto;
+}
+
+.gameNickname {
+    flex: 1;
+    font-size: 4vh;
+    padding-left: 2vh;
+    word-break:break-all;
+    overflow-y: hidden;
+    color: white;
+    display: flex;
+}
+
+.pow {
+    height: 60%;
+    padding: 1vh
+}
+
+.janggiGrid {
+    height: 56vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1vh 13.6vh 13.6vh 13.6vh 1vh;
+    grid-template-rows: 1vh 13.6vh 13.6vh 13.6vh 13.6vh 1vh;
+}
+
+.janggiGrid > div {
+    text-align: center;
+}
+
+.janggiGrid > div > img {
+    height: 80%;
+    margin-top: 10%;
+}
+
+.janggiGrid > .otherSide {
+    background-color: #ff7f50;
+}
+
+.janggiGrid > .mySide {
+    background-color: #228b22;
+}
+
+.janggiGrid > .canMove {
+    background: repeating-linear-gradient(-45deg, black, black 8px, #666666 5px, #666666 10px);
+}
+
+.borderTop {
+    border-top: 2px solid white;
+}
+
+.borderTopRed {
+    border-top: 2px solid red;
+}
+
+.borderLeft {
+    border-left: 2px solid white;
+}
+
+.borderBottomRight {
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
+}
+
+.backgroundBlue {
+    background-color: #808080;
+}
+
+.clickDisabled {
+    pointer-events: none;
+}
+
+.myBox {
+    position: absolute;
+    display: flex;
+    bottom: 1vh;
+    height: 10vh;
+    width: 95%;
+    border: 2px solid white;
+    border-radius: 3px;
+}
+
+.myNickname {
+    padding: 1vh;
+    width: 60%;
+    word-break: break-all;
+    overflow: hidden;
+    font-size: 3vh;
+}
+
+.otherBox {
+    position: absolute;
+    display: flex;
+    background-color: #808080;
+    top: 1vh;
+    height: 10vh;
+    width: 95%;
+    border: 2px solid white;
+    border-radius: 3px;
+}
+
+.otherNickname {
+    padding: 1vh;
+    width: 60%;
+    word-break: break-all;
+    overflow: hidden;
+    font-size: 3vh;
+}
+
+.waitingPlayer2 {
+    margin-top: 40vh;
+    font-size: 3vh;
+}
+
+.chatButtonBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 40%;
+}
+
+.chatButton {
+    text-align: center;
+    width: 85%;
+    border: white 1px solid;
+    font-size: 2.5vh;
+    cursor: pointer
+}   
+
+.ready {
+    border: 2px solid red;
+}
+
+.chatSendBox {
+    display: flex;
+    position: absolute;
+    bottom: 13vh;
+    height: 7vh;
+    width: 95%;
+    align-items: center;
+}
+
+.chatTextarea {
+    height: 85%;
+    width: 80%;
+    background-color: black;
+    color: white;
+    resize: none;
+    font-size: 2.5vh;
+    padding-top: 1vh;
+}
+
+.chatSendButton {
+    width: 25%;
+    height: 5.5vh;
+    padding-top: 1vh;
+    font-size: 3vh;
+    margin-left: 1vh;
+    border: 1px solid white;
+    text-align: center;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.chatList {
+    position: absolute;
+    top: 15vh;
+    width: 95%;
+    min-height: 58vh;
+    max-height: 58vh;
+    overflow-y: auto;
+    border: 2px solid white;
+    border-radius: 3px;
+}
+
+.chatMsg {
+    font-size: 4vh;
+    min-height: 5vh;
+    padding: 1vh;
+    word-break: break-all;
+}
+
+.resultBox {
+    height: 58vh;
+}
+
+.resultButton {
+    border: 2px solid white;
+    border-radius: 3px;
+    margin-top: 20vh;
+    height: 10vh;
+    width: 20vh;
+    text-align: center;
+    font-size: 7vh;
+    cursor: pointer;
 }
