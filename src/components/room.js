@@ -31,7 +31,7 @@ export default function Room({ socket, setRoom, setMyTurn, setOtherSocketId }) {
     };
 
     const enterRoom = (room) => {
-        axios.post(process.env,NEXT_PUBLIC_API_ENTERROOM, {
+        axios.post(process.env.NEXT_PUBLIC_API_ENTERROOM, {
             roomId: room.id,
             socketId: socket.id
         })
