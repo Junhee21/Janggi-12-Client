@@ -210,7 +210,7 @@ export default function Janggi12Game({allReady, nickname, otherNickname,
             }
             const cp1 = myPow;
             if (pieces[index].id === "Hu") {
-                cp1.push("Hu");
+                cp1.push("Ja");
             } else {
                 cp1.push(pieces[index].id);
             }
