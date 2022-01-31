@@ -209,7 +209,11 @@ export default function Janggi12Game({allReady, nickname, otherNickname,
                 setResult(1);
             }
             const cp1 = myPow;
-            cp1.push(pieces[index].id);
+            if (pieces[index].id === "Hu") {
+                cp1.push("Hu");
+            } else {
+                cp1.push(pieces[index].id);
+            }
             setMyPow(cp1);
         }
         if ((index>=6 && index<=8) && (temp.id === "Ja")) {
