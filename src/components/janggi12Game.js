@@ -125,7 +125,8 @@ export default function Janggi12Game({allReady, nickname, otherNickname,
     }, [allReady])
 
     useEffect(() => {
-        if (result) {
+        if (result !==0 ) {
+            clearInterval(timer);
             socket.emit("result", {
                 receiver: otherSocketId,
                 result: result
@@ -153,7 +154,7 @@ export default function Janggi12Game({allReady, nickname, otherNickname,
     }
 
     useEffect(() => {
-        if (turn && (result === 0)) {
+        if (turn) {
             var _timer = setInterval(function () {setCnt(cnt => cnt - 1)}, 1000);
             setTimer(_timer);
         }
