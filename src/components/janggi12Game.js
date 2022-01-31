@@ -127,7 +127,7 @@ export default function Janggi12Game({allReady, nickname, otherNickname,
     useEffect(() => {
         if (result !==0 ) {
             clearInterval(timer);
-            setCnt(100);
+            setCnt(30);
             socket.emit("result", {
                 receiver: otherSocketId,
                 result: result
