@@ -153,7 +153,7 @@ export default function Janggi12Game({allReady, nickname, otherNickname,
     }
 
     useEffect(() => {
-        if (turn) {
+        if (turn && (result === 0)) {
             var _timer = setInterval(function () {setCnt(cnt => cnt - 1)}, 1000);
             setTimer(_timer);
         }
