@@ -32,11 +32,13 @@ export default function MakeNickname ({setNickname}) {
             >
                 입장
             </div>
-            <a className={styles.info}
-                href='https://www.youtube.com/watch?v=AvczH_VEo5I' target="_blank"
+            <div className={styles.info}
+                onClick={() => window.open('https://www.youtube.com/watch?v=mIZu6d7RY4M&t=9s',
+                '_blank')}
+                style={{cursor:'pointer'}}
             >
                 십이장기를 모른다면 Click!
-            </a>
+            </div>
         </div>
     )
 }
