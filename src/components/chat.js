@@ -3,8 +3,8 @@ import { useState, useEffect } from 'react'
 import classNames from 'classnames';
 
 export default function Chat({
-        otherNickname, setOtherNickname, nickname,
-        socket, otherSocketId, setAllReady, myTurn}) {
+        otherNickname, setOtherNickname, nickname, setRoom,
+        socket, otherSocketId, setOtherSocketId, setAllReady, myTurn}) {
     const [chatList, setChatList] = useState([]);
     const [chat, setChat] = useState();
     const [myReady, setMyReady] = useState(false);
@@ -38,7 +38,6 @@ export default function Chat({
             setMyReady(false);
             setOtherReady(false);
             setChat();
-            setOtherNickname();
         }
     }, [otherSocketId])
 
@@ -78,11 +77,28 @@ export default function Chat({
         }
     };
 
+    const getOut = () => {
+        socket.emit('disconnectReply', {
+            socketId: socket.id
+        });
+        setOtherNickname();
+        setOtherSocketId();
+        setRoom();
+    }
+
     return (
         <div className={styles.container}>
-            <div className={classNames(styles.otherBox, otherReady?styles.ready:"")}>
-                <div className={styles.otherNickname}>
-                    {otherNickname}
+            <div className={styles.otherBoxAndButton}>
+                <div className={classNames(styles.otherBox, otherReady?styles.ready:"")}>
+                    <div className={styles.otherNickname}>
+                        {otherNickname}
+                    </div>
+                </div>
+                <div
+                    className={styles.getOutButton}
+                    onClick={() => getOut()}
+                >
+                    나가기
                 </div>
             </div>
             <div className={styles.chatList}>

@@ -2,7 +2,7 @@ import styles from '../../styles/Home.module.css';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
-export default function Room({ socket, setRoom, setMyTurn, setOtherSocketId }) {
+export default function Room({ socket, setRoom, setMyTurn, setOtherSocketId, roomFresher }) {
     const [title, setTitle] = useState();
     const [rooms, setRooms] = useState([]);
     const [refreshBool, setRefreshBool] = useState(false);
@@ -37,7 +37,13 @@ export default function Room({ socket, setRoom, setMyTurn, setOtherSocketId }) {
         })
         .then(res => {
             if (!res.data.success) {
-                alert("방이 꽉 찼습니다!");
+                {
+                    if (res.data.message === "player2") {
+                        alert("방이 꽉 찼습니다!");
+                    } else {
+                        setRefreshBool(!refreshBool);
+                    }
+                }
             } else {
                 setRoom(room.id);
                 setMyTurn("second");
@@ -68,7 +74,7 @@ export default function Room({ socket, setRoom, setMyTurn, setOtherSocketId }) {
             setRooms([]);
             setTitle();
         }
-    }, [refreshBool])
+    }, [refreshBool, roomFresher])
 
     return (
         <div className={styles.container}>
@@ -91,7 +97,6 @@ export default function Room({ socket, setRoom, setMyTurn, setOtherSocketId }) {
                 >
                     새로고침
                 </div>
-
             </div>
             <div className={styles.roomList}>
                 {rooms.map((room, index) => {

@@ -18,7 +18,7 @@
 
 .title {
     font-size: 8vh;
-    margin-top: 15vh;
+    margin-top: 10vh;
 }
 
 .info {
@@ -208,15 +208,34 @@
     font-size: 3vh;
 }
 
-.otherBox {
+.otherBoxAndButton {
     position: absolute;
     display: flex;
-    background-color: #808080;
     top: 1vh;
-    height: 10vh;
     width: 95%;
+    height: 10vh;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.otherBox {
+    display: flex;
+    background-color: #808080;
+    height: 100%;
+    width: 60%;
     border: 2px solid white;
     border-radius: 3px;
+}
+
+.getOutButton {
+    height: 80%;
+    width: 30%;
+    border: 2px solid white;
+    border-radius: 3px;
+    cursor: pointer;
+    text-align: center;
+    padding-top: 2vh;
+    font-size: 3vh;
 }
 
 .otherNickname {
