@@ -68,7 +68,7 @@ export default function Home() {
   return (
     <div className = {styles.main}>
       <Head>
-        <title>Board Game</title>
+        <title>made by 원준희</title>
         <meta name="description" content="12 Janggi" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
