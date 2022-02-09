@@ -4,7 +4,7 @@
 ## pages
 index.js 파일에 component 들이 조건에 따라 렌더링되도룩 구현
 
-ex) 페이지 처음 들어가면 nickname을 설정하지 않았으므로 nickname 만드는 component가 렌더링 된다.
+ex) 페이지 처음 들어가면 nickname을 설정하지 않았으므로 nickname 만드는 component가 렌더링됨
 
 ## public
 장기 말들의 이미지파일이 있음
