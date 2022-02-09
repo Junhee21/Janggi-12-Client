@@ -1,5 +1,3 @@
-# [janggi.cookie-coffee.com](https://janggi.cookie-coffee.com) by vercel
-
 # Next.js
 
 # 구성
