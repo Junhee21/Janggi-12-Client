@@ -231,6 +231,10 @@ export default function Janggi12Game({allReady, nickname, otherNickname,
     }
 
     const clickPow = (pow) => {
+        if (!turn) {
+          return;
+        }
+        
         const cp = [...canMove];
         for (var i = 0; i<30; i++)
         {
